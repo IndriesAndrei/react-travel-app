@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import Item from "./Item";
 
 const initialItems = [
@@ -6,11 +7,11 @@ const initialItems = [
     {id: 3, description: 'Charger', quantity: 1, packed: false},
   ]
 
-function PackingLIst() {
+function PackingLIst({items}) {
     return (
         <div className="list">
             <ul>
-                {initialItems.map((item) => <Item item={item} key={item.id} />)}
+                {items.map((item) => <Item item={item} key={item.id} />)}
             </ul>
         </div>
     )

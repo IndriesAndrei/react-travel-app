@@ -1,6 +1,7 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
 
-function Form() {
+function Form({onAddItems}) {
     const [description, setDescription] = useState('');
     const [quantity, setQuantity] = useState(1);
 
@@ -11,6 +12,9 @@ function Form() {
 
         const newItem = {description, quantity, packed: false, id: Date.now()};
         console.log(newItem);
+
+        // add the new item to the list
+        onAddItems(newItem);
 
         setDescription('');
         setQuantity(1);
