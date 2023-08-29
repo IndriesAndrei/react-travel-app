@@ -14,11 +14,15 @@ function App() {
     setItems((items) => [...items, item]);
   }
 
+  function handleDeleteItem(id) {
+    setItems(items => items.filter(item => item.id !== id))
+  }
+
   return (
     <>
       <Logo />
       <Form onAddItems={handleAddItems} />
-      <PackingLIst items={items} />
+      <PackingLIst items={items} onDeleteItem={handleDeleteItem} />
       <Stats />
     </>
   )
